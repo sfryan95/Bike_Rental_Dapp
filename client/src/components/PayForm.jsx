@@ -1,15 +1,22 @@
 import { useForm } from 'react-hook-form';
-import { FormErrorMessage, FormControl, Input, Button, Text, Flex } from '@chakra-ui/react';
+import { FormErrorMessage, FormLabel, FormControl, Input, Button, Text, Flex } from '@chakra-ui/react';
+import { useContext } from 'react';
+import { BlockchainContext } from '../context/BlockchainContext';
 
 export default function PayForm() {
+  const { makePayment } = useContext(BlockchainContext);
   const {
     handleSubmit,
     register,
     formState: { errors, isSubmitting },
+    reset,
   } = useForm();
 
   const onSubmit = async (values) => {
-    console.log(alert(JSON.stringify(values, null, 2)));
+    console.log(JSON.stringify(values, null, 2));
+    const { payment } = values;
+    await makePayment(payment);
+    reset();
   };
 
   return (

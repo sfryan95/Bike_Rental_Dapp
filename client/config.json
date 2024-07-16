@@ -138,7 +138,7 @@
     {
       "inputs": [
         {
-          "internalType": "address payable",
+          "internalType": "address",
           "name": "walletAddress",
           "type": "address"
         }
@@ -168,6 +168,19 @@
       "type": "function"
     },
     {
+      "inputs": [],
+      "name": "getOwnerBalance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
       "inputs": [
         {
           "internalType": "address",
@@ -175,7 +188,7 @@
           "type": "address"
         }
       ],
-      "name": "getRenterInfo",
+      "name": "getRenter",
       "outputs": [
         {
           "internalType": "string",
@@ -223,14 +236,19 @@
     {
       "inputs": [
         {
-          "internalType": "address payable",
+          "internalType": "address",
           "name": "walletAddress",
           "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
         }
       ],
       "name": "makePayment",
       "outputs": [],
-      "stateMutability": "payable",
+      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
@@ -241,7 +259,7 @@
           "type": "address"
         }
       ],
-      "name": "renterExisits",
+      "name": "renterExists",
       "outputs": [
         {
           "internalType": "bool",
@@ -310,7 +328,14 @@
       ],
       "stateMutability": "view",
       "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "withdrawOwnerBalance",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
     }
   ],
-  "contractAddress": "0x21Fa0D476003ff4A70a01283881Fe42bD07d35ac"
+  "contractAddress": "0x382Cb3A4d67B4021dDF809EC87797F9E2f48eC9a"
 }

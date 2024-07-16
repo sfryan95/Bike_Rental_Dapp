@@ -1,5 +1,6 @@
 import { Box, Heading, Container, Text, Button, Stack, Icon, useColorModeValue, createIcon } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
+import Background from '../assets/bike-background.jpg';
 
 export default function Hero() {
   let navigate = useNavigate();
@@ -7,39 +8,45 @@ export default function Hero() {
   const handleClick = (path) => {
     navigate(path);
   };
+
   return (
     <>
-      <Container maxW={'3xl'}>
-        <Stack as={Box} textAlign={'center'} spacing={{ base: 8, md: 14 }} py={{ base: 20, md: 36 }}>
-          <Heading fontWeight={600} fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }} lineHeight={'110%'}>
-            Rent your next bike <br />
-            <Text as={'span'} color={'teal.400'}>
-              with Crypto!
-            </Text>
-          </Heading>
-          <Text color={'gray.500'}>Connect your wallet, choose your bike, and you&aposre off to the races. When you return it, you can easily pay your fare with BNB. And we all like those BNB gas fees!</Text>
-          <Stack direction={'column'} spacing={3} align={'center'} alignSelf={'center'} position={'relative'}>
-            <Button
-              onClick={() => handleClick('dashboard')}
-              colorScheme={'teal'}
-              bg={'teal.400'}
-              rounded={'full'}
-              px={6}
-              _hover={{
-                bg: 'teal.500',
-              }}>
-              Choose My Bike
-            </Button>
-
-            <Box>
-              <Icon as={Arrow} color={useColorModeValue('gray.800', 'gray.300')} w={71} position={'absolute'} right={-71} top={'10px'} />
-              <Text fontSize={'lg'} fontFamily={'Caveat'} position={'absolute'} right={'-125px'} top={'-25px'} transform={'rotate(10deg)'}>
-                Rent at no cost up front
+      <Box bgImage={`url(${Background})`} bgPosition="center" bgRepeat="no-repeat" bgSize="cover" minH="100vh" d="flex" alignItems="center">
+        <Container maxW={'3xl'} bg={useColorModeValue('whiteAlpha.800', 'blackAlpha.700')} p={8}>
+          <Stack as={Box} textAlign={'center'} spacing={{ base: 8, md: 14 }} py={{ base: 20, md: 36 }}>
+            <Heading fontWeight={800} fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }} lineHeight={'110%'} textShadow="2px 2px teal">
+              Rent your next bike <br />
+              <Text as={'span'} color={'teal.400'}>
+                with Crypto!
               </Text>
-            </Box>
+            </Heading>
+            <Text color={useColorModeValue('gray.800', 'gray.300')} fontSize={'lg'} maxW={'2xl'} mx={'auto'} mb={2}>
+              Connect your wallet, choose your bike, and you're off to the races. When you return it, you can easily pay your fare with BNB. And we all like those BNB gas fees!
+            </Text>
+            <Stack direction={'column'} spacing={3} align={'center'} alignSelf={'center'} position={'relative'}>
+              <Button
+                onClick={() => handleClick('dashboard')}
+                colorScheme={'teal'}
+                bg={'teal.400'}
+                rounded={'full'}
+                px={6}
+                size="lg"
+                _hover={{
+                  bg: 'teal.500',
+                }}>
+                Choose My Bike
+              </Button>
+
+              <Box>
+                <Icon as={Arrow} color={useColorModeValue('gray.800', 'gray.300')} w={71} position={'absolute'} right={-71} top={'10px'} />
+                <Text fontSize={'lg'} fontFamily={'Caveat'} position={'absolute'} right={'-125px'} top={'-25px'} transform={'rotate(10deg)'}>
+                  Rent at no cost up front
+                </Text>
+              </Box>
+            </Stack>
           </Stack>
-        </Stack>
-      </Container>
+        </Container>
+      </Box>
     </>
   );
 }
