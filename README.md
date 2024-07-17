@@ -19,7 +19,7 @@ CycleLink is a decentralized application (dApp) designed to streamline bike rent
 - ![Chakra UI](https://img.shields.io/badge/Chakra_UI-319795?logo=chakra-ui&logoColor=white) **Chakra UI**: Component library for building accessible React applications.
 - ![React Hook Form](https://img.shields.io/badge/React_Hook_Form-EC5990?logo=react-hook-form&logoColor=white) **React Hook Form**: For handling form state and validation in React.
 - ![React Router](https://img.shields.io/badge/React_Router-CA4245?logo=react-router&logoColor=white) **React Router**: For managing navigation in the React application.
-- ![Web3.js](https://img.shields.io/badge/Web3.js-F16822?logo=javascript&logoColor=white) **Web3.js** / ![Ethers.js](https://img.shields.io/badge/Ethers.js-6633CC?logo=ethereum&logoColor=white) **Ethers.js**: For interacting with the Binance Smart Chain from the front-end.
+- ![Ethers.js](https://img.shields.io/badge/Ethers.js-6633CC?logo=ethereum&logoColor=white) **Ethers.js**: For interacting with the Binance Smart Chain from the front-end.
 
 ## Contract Structure
 
@@ -29,15 +29,16 @@ contracts/
 
 src/
 |-- components/
-|   |-- Home.js: Home page component
-|   |-- Navbar.js: Navigation bar component
-|   |-- Dashboard.js: Renter dashboard component
-|   |-- OwnerDashboard.js: Admin dashboard component
-|   |-- WithdrawForm.js: Form component for the owner to withdraw earnings
-|   |-- RenterForm.js: Form component for users to register as renters
-|   |-- PayForm.js: Form component for users to make payments
-|   |-- AddToBalanceForm.js: Form component for users to add funds to their account
-|   |-- Bike.js: Component to display bike details and actions
+|   |-- Home.jsx: Home page component
+|   |-- Navbar.jsx: Navigation bar component
+|   |-- Dashboard.jsx: Renter dashboard component
+|   |-- OwnerDashboard.jsx: Admin dashboard component
+|   |-- WithdrawForm.jsx: Form component for the owner to withdraw earnings
+|   |-- RenterForm.jsx: Form component for users to register as renters
+|   |-- PayForm.jsx: Form component for users to make payments
+|   |-- AddToBalanceForm.jsx: Form component for users to add funds to their account
+|   |-- Bike.jsx: Component to display bike details and actions
 |-- context/
-|   |-- BlockchainContext.js: Context provider for blockchain interactions
-|-- App.js: Main application component with routing
+|   |-- BlockchainContext.jsx: Context provider for blockchain interactions
+|-- App.jsx: Main application component with routing
+```

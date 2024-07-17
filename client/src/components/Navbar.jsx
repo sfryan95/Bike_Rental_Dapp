@@ -6,7 +6,7 @@ import { BlockchainContext } from '../context/BlockchainContext';
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
-  const { connectWallet, currentAccount } = useContext(BlockchainContext);
+  const { connectWallet, currentAccount, owner } = useContext(BlockchainContext);
 
   return (
     <Box>
@@ -24,6 +24,11 @@ export default function Navbar() {
           <Text textAlign={useBreakpointValue({ base: 'center', md: 'left' })} fontFamily={'heading'} color={useColorModeValue('gray.800', 'white')} fontWeight={900} fontSize={'x-large'}>
             <Link to="/">CycleLink</Link>
           </Text>
+          {owner && (
+            <Button display={{ md: 'inline-flex' }} fontSize={'sm'} ml={4} fontWeight={600} color={'white'} bg={'teal.500'} _hover={{ bg: 'teal.300' }}>
+              <Link to="/admin">Owner Wallet</Link>
+            </Button>
+          )}
         </Flex>
 
         <Stack flex={{ base: 1, md: 0 }} justify={'flex-end'} direction={'row'} spacing={6}>
